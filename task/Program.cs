@@ -26,6 +26,15 @@ void FillArray(string[] arr)
         }
     }
 }
+int SizeOfArrayTwo(string[] arr)
+{
+    int sizeTwo = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i].Length < limit) sizeTwo++;
+    }
+    return sizeTwo;
+}
 
 
 FillArray(arrayOne);
