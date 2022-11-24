@@ -24,7 +24,6 @@ void FillArray(string[] arr)
         }
     }
 }
-
 int SizeOfArrayTwo(string[] arr)
 {
     int sizeTwo = 0;
@@ -34,8 +33,7 @@ int SizeOfArrayTwo(string[] arr)
     }
     return sizeTwo;
 }
-
-string[] TestRun(string[] arr)
+string[] RewriteArray(string[] arr)
 {
     string[] arrayTwo = new string[SizeOfArrayTwo(arrayOne)];
     for (int i = 0, j = 0; i < size; i++)
@@ -48,9 +46,8 @@ string[] TestRun(string[] arr)
     }
     return arrayTwo;
 }
-
 FillArray(arrayOne);
 Console.WriteLine();
-string[] arrayTwo = TestRun(arrayOne);
+string[] arrayTwo = RewriteArray(arrayOne);
 Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
 Console.WriteLine();
