@@ -7,11 +7,9 @@ string Message(string message)
     Console.Write(message);
     return Console.ReadLine()!;
 }
-
 int limit = 4;
 int size = Convert.ToInt32(Message($"Задайте размер массива строк: "));
 string[] arrayOne = new string[size];
-
 
 void FillArray(string[] arr)
 {
@@ -26,6 +24,7 @@ void FillArray(string[] arr)
         }
     }
 }
+
 int SizeOfArrayTwo(string[] arr)
 {
     int sizeTwo = 0;
@@ -36,6 +35,22 @@ int SizeOfArrayTwo(string[] arr)
     return sizeTwo;
 }
 
+string[] TestRun(string[] arr)
+{
+    string[] arrayTwo = new string[SizeOfArrayTwo(arrayOne)];
+    for (int i = 0, j = 0; i < size; i++)
+    {
+        if (arr[i].Length < limit)
+        {
+            arrayTwo[j] = arr[i];
+            j++;
+        }
+    }
+    return arrayTwo;
+}
 
 FillArray(arrayOne);
+Console.WriteLine();
+string[] arrayTwo = TestRun(arrayOne);
+Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
 Console.WriteLine();
